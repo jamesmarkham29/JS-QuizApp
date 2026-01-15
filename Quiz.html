@@ -1,4 +1,22 @@
-// Get elements
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Quiz</title>
+</head>
+<body>
+
+  <h2 id="question">Question will appear here</h2>
+
+  <button id="answer1" onclick="checkAnswer(this.innerText)"></button><br><br>
+  <button id="answer2" onclick="checkAnswer(this.innerText)"></button><br><br>
+  <button id="answer3" onclick="checkAnswer(this.innerText)"></button><br><br>
+
+  <h3>Score: <span id="showScore">0</span></h3>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Get elements
 var getQuestion = document.getElementById("question");
 var getAnswer1 = document.getElementById("answer1");
 var getAnswer2 = document.getElementById("answer2");
@@ -72,3 +90,9 @@ function nextQuestion() {
 
 // Start quiz
 loadQuestion();
+
+  </script>
+
+
+</body>
+</html>
