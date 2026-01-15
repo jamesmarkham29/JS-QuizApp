@@ -5,30 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>JavaScript Quiz App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="quiz.css">
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .answer-option {
+            display: block;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #444;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .answer-option.selected {
+            background-color: #4caf50;
+            color: white;
+            border-color: #2e7d32;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #scoreCounter {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="wrapper">
-        <header>
-            <p class="title">JavaScript Quiz App</p>
-        </header>
-        <h2 id="scoreCounter">Score : <span id="showScore">0</span></h2>
-        <div id="app">
-            <hr>
-            <h3 id="question"></h3>
-            <button id="answer1"></button>
-            <button id="answer2"></button>
-            <button id="answer3"></button>
-        </div>
-        <button id="nextQuestion" onclick="nextQuestion()">Next</button>
+
+    <h1>JavaScript Quiz App</h1>
+
+    <h2 id="scoreCounter">Score: <span id="showScore">0</span></h2>
+
+    <div id="app">
+        <h3 id="question"></h3>
+
+        <label class="answer-option">
+            <input type="radio" name="answer" id="answer1">
+            <span id="text1"></span>
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="answer" id="answer2">
+            <span id="text2"></span>
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="answer" id="answer3">
+            <span id="text3"></span>
+        </label>
     </div>
-    
+
+    <div class="nav-buttons">
+        <button id="backQuestion">Back</button>
+        <button id="nextQuestion">Next</button>
+        <button id="submitQuiz" style="display:none;">Submit</button>
+    </div>
+
+    <script src="quiz.js"></script>
 </body>
-<script src="quiz.js"></script>
 </html>
